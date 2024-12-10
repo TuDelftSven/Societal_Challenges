@@ -2,15 +2,23 @@ import pandas as pd
 import geopandas as gpd
 import matplotlib.pyplot as plt
 import time
+import seaborn as sns
+from pysal.lib import weights
+
 
 # Load the data CSV and the GeoPackage shapefile
 data_file = 'data/85950NED.csv'
-shapefile = 'data/wijkenbuurten_2023_v2.gpkg'
 shapefile2021 = 'data/geo/buurten_2021_v3.shp'
+wijk_file = "data/WijkenBuurt2021.xlsx"
 
 # Read the CSV and shapefile
 data_df = pd.read_csv(data_file, sep=";")
 geo_df = gpd.read_file(shapefile2021)
+wijk_df = pd.read_excel(wijk_file)
+
+# Filter rows where 'gwb_code_10' contains 'GM'
+wijk_df = wijk_df[wijk_df["gwb_code_10"].str.contains("GM", na=False)]
+
 
 # Ensure that both 'RegioS' and 'gemeentecode' are of the same data type (e.g., strings)
 data_df['RegioS'] = data_df['RegioS'].astype(str)
@@ -38,6 +46,7 @@ gemeente_df.reset_index(inplace=True)
 
 # Merge the data with the shapefile on 'RegioS' and 'gemeentecode'
 merged_gdf = gemeente_df.merge(aggregated_df, left_on='GM_CODE', right_on='RegioS')
+merged_gdf = merged_gdf.merge(wijk_df, left_on='GM_CODE', right_on='gwb_code_10')
 start = time.time()
 
 # Plot the spatial map of 'TotaleWoonlasten_2'
@@ -50,4 +59,22 @@ plt.title('Spatial Map of Totale Woonlasten 2')
 plt.axis('off')
 plt.show()
 
+w = weights.Queen.from_dataframe(merged_gdf, idVariable='GM_CODE')
+w['GM1680']
+merged_gdf["woonquote"] = (merged_gdf["Woonquote_5"] - merged_gdf["Woonquote_5"].mean()) / merged_gdf["Woonquote_5"].std()
+merged_gdf["w_woonquote"] = weights.lag_spatial(w, merged_gdf["woonquote"])
+
+# Setup the figure and axis
+f, ax = plt.subplots(1, figsize=(9, 9))
+# Plot values
+sns.regplot(x="woonquote", y="w_woonquote", data=merged_gdf, ci=None)
+# Add vertical and horizontal lines
+plt.axvline(0, c="k", alpha=0.5)
+plt.axhline(0, c="k", alpha=0.5)
+# Display
+plt.show()
+
+
+# # Save the GeoDataFrame as a GeoPackage
+# merged_gdf.to_file('all_data_2021.gpkg', driver='GPKG')
 
