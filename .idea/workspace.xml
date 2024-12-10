@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56f13d1a-68d0-4410-90f5-c2ed3577daed" name="Changes" comment="First spatial map">
+    <list default="true" id="56f13d1a-68d0-4410-90f5-c2ed3577daed" name="Changes" comment="Spatial map">
       <change afterPath="$PROJECT_DIR$/data-test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exploration.py" beforeDir="false" afterPath="$PROJECT_DIR$/exploration.py" afterDir="false" />
@@ -83,7 +83,7 @@
       <workItem from="1732789910335" duration="7863000" />
       <workItem from="1733821860009" duration="117000" />
       <workItem from="1733822000759" duration="1378000" />
-      <workItem from="1733833152062" duration="562000" />
+      <workItem from="1733833152062" duration="6046000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -109,7 +109,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733829394768</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Spatial map">
+      <option name="closed" value="true" />
+      <created>1733833785233</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1733833785233</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,10 +127,11 @@
     <MESSAGE value="First commit" />
     <MESSAGE value="Commit without datafiles" />
     <MESSAGE value="First spatial map" />
-    <option name="LAST_COMMIT_MESSAGE" value="First spatial map" />
+    <MESSAGE value="Spatial map" />
+    <option name="LAST_COMMIT_MESSAGE" value="Spatial map" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Societal_Challenges$exploration.coverage" NAME="exploration Coverage Results" MODIFIED="1733833294437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Societal_Challenges$data_test.coverage" NAME="data-test Coverage Results" MODIFIED="1733831847044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Societal_Challenges$exploration.coverage" NAME="exploration Coverage Results" MODIFIED="1733838323296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Societal_Challenges$data_test.coverage" NAME="data-test Coverage Results" MODIFIED="1733836247626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
