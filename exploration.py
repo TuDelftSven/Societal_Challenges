@@ -51,13 +51,13 @@ merged_gdf = gemeente_df.merge(aggregated_df, left_on='GM_CODE', right_on='Regio
 merged_gdf = merged_gdf.merge(wijk_df, left_on='GM_CODE', right_on='gwb_code_10')
 merged_gdf = merged_gdf.drop(columns=['gm_naam'])
 
-# Plot the spatial map of 'TotaleWoonlasten_2'
+# Plot the spatial map of 'TotaleWoonlasten_2' "Woonquote_5"
 plt.figure(figsize=(12, 8))
-merged_gdf.plot(column='TotaleWoonlasten_2',
+merged_gdf.plot(column="Woonquote_5",
                 cmap='viridis',
                 legend=True,
-                legend_kwds={'label': "Totale Woonlasten 2", 'orientation': "horizontal"})
-plt.title('Spatial Map of Totale Woonlasten 2')
+                legend_kwds={'label': "Woonquote_5", 'orientation': "horizontal"})
+plt.title('Spatial Map of Woonquote')
 plt.axis('off')
 plt.show()
 
